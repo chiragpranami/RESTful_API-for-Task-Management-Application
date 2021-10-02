@@ -9,6 +9,7 @@ router.get('/', (req, res, next) => {
     Perk.find().select('_id perk perkdesc')
         .exec()
         .then(docs => {
+        console.log(docs);
             const response = docs.map(doc => {
                     return {
                         _id: doc._id,
